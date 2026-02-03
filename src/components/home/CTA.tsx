@@ -21,8 +21,8 @@ export function CTA() {
               size="lg"
               className="bg-white text-primary hover:bg-white/90 font-semibold text-lg"
             >
-              <Link to="/yhteystiedot">
-                Pyydä tarjous
+              <Link to="/yhteystiedot" className="flex items-center">
+                <span>Pyydä tarjous</span>
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
@@ -30,11 +30,11 @@ export function CTA() {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-primary text-lg"
+              className="border-white text-white hover:bg-white hover:text-primary text-lg bg-transparent"
             >
-              <a href="tel:+358401234567">
+              <a href="tel:+358401234567" className="flex items-center">
                 <Phone className="mr-2 w-5 h-5" />
-                040 123 4567
+                <span>040 123 4567</span>
               </a>
             </Button>
           </div>

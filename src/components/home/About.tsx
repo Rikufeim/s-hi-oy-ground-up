@@ -76,7 +76,7 @@ export function About() {
             {/* Tax Deduction Info */}
             <div className="bg-muted rounded-xl p-6 border-l-4 border-primary">
               <h3 className="font-bold text-foreground mb-2">
-                💰 Kotitalousvähennys
+                Kotitalousvähennys
               </h3>
               <p className="text-muted-foreground text-sm">
                 Yksityisasiakkaat voivat hyödyntää kotitalousvähennystä palveluissamme.

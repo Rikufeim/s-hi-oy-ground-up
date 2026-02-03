@@ -1,6 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Quote } from "lucide-react";
 
 const projects = [
   {
@@ -26,21 +25,6 @@ const projects = [
     location: "Liminka",
     description: "Maatalousasiakkaan peltojen ojitustyöt kuivatuksen parantamiseksi.",
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Matti Korhonen",
-    role: "Omakotitalon rakentaja",
-    content: "Sähi Oy hoiti talonpohjamme mallikkaasti ja aikataulussa. Ammattitaitoinen porukka!",
-    rating: 5,
-  },
-  {
-    name: "Sähköverkko Oy",
-    role: "Yritysasiakas",
-    content: "Olemme tehneet yhteistyötä useissa maakaapelointiprojekteissa. Työn laatu on korkealla tasolla.",
-    rating: 5,
   },
 ];
 
@@ -82,32 +66,6 @@ const Referenssit = () => {
                   <span className="text-primary text-sm font-medium">{project.location}</span>
                   <h3 className="text-xl font-bold text-foreground mt-1 mb-3">{project.title}</h3>
                   <p className="text-muted-foreground">{project.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section-padding bg-muted">
-        <div className="container-custom">
-          <h2 className="text-3xl font-bold text-foreground mb-12">Asiakaspalautteet</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index}>
-                <CardContent className="p-8 space-y-4">
-                  <Quote className="w-10 h-10 text-primary opacity-50" />
-                  <p className="text-foreground text-lg">"{testimonial.content}"</p>
-                  <div className="flex items-center space-x-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-primary fill-current" />
-                    ))}
-                  </div>
-                  <div className="pt-4 border-t border-border">
-                    <p className="font-semibold text-foreground">{testimonial.name}</p>
-                    <p className="text-muted-foreground text-sm">{testimonial.role}</p>
-                  </div>
                 </CardContent>
               </Card>
             ))}

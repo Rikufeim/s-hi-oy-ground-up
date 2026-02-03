@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Linkedin, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 const services = [
-  { name: "Talonpohjat", href: "/palvelut/talonpohjat" },
-  { name: "Maansiirtotyöt", href: "/palvelut/maansiirtotyot" },
-  { name: "Kaivinkoneurakointi", href: "/palvelut/kaivinkoneurakointi" },
-  { name: "Metsämuokkaukset", href: "/palvelut/metsamuokkaukset" },
-  { name: "Maakaapelointi", href: "/palvelut/maakaapelointi" },
+  { name: "Talonpohjat", href: "/palvelut#talonpohjat" },
+  { name: "Maansiirtotyöt", href: "/palvelut#maansiirtotyot" },
+  { name: "Kaivinkoneurakointi", href: "/palvelut#kaivinkoneurakointi" },
+  { name: "Metsämuokkaukset", href: "/palvelut#metsamuokkaukset" },
+  { name: "Teiden ja pihojen pohjatyöt", href: "/palvelut#teiden-ja-pihojen-pohjatyot" },
+  { name: "Ojitukset", href: "/palvelut#ojitukset" },
+  { name: "Maakaapelointi", href: "/palvelut#maakaapelointi" },
+  { name: "Kuljettajapalvelut", href: "/palvelut#kuljettajapalvelut" },
 ];
 
 const quickLinks = [
@@ -14,7 +17,6 @@ const quickLinks = [
   { name: "Palvelut", href: "/palvelut" },
   { name: "Referenssit", href: "/referenssit" },
   { name: "Yritys", href: "/yritys" },
-  { name: "Blogi", href: "/blogi" },
   { name: "Yhteystiedot", href: "/yhteystiedot" },
 ];
 
@@ -39,29 +41,6 @@ export function Footer() {
               Luotettava maanrakennusyritys Pohjois-Pohjanmaalla. Tarjoamme laadukkaita
               maanrakennus- ja maakaapelointipalveluita ammattitaidolla jo vuodesta 2020.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Services */}

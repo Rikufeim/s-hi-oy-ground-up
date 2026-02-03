@@ -8,58 +8,115 @@ import {
   Waves,
   Zap,
   Users,
-  ArrowRight
+  ArrowRight,
+  Check
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const services = [
   {
     icon: Home,
     title: "Talonpohjat",
     description: "Ammattitaidolla toteutetut talonpohjat ja perustatukset. Varmistamme tukevat rakenteet.",
+    features: [
+      "Perustusten kaivuu ja valmistelu",
+      "Maanpohjan tiivistys ja tasaus",
+      "Vesieristys ja tiivistys",
+      "Lopputarkastus ja hyväksyntä"
+    ],
     href: "/palvelut/talonpohjat",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: Truck,
     title: "Maansiirtotyöt",
     description: "Tehokkaat maansiirtotyöt ja maa-ainesten kuljetukset kaikenkokoisiin projekteihin.",
+    features: [
+      "Maanpohjan tasaus",
+      "Maa-ainesten kuljetus",
+      "Täyttö- ja poistotyöt",
+      "Lopputasoitus"
+    ],
     href: "/palvelut/maansiirtotyot",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: Construction,
     title: "Kaivinkoneurakointi",
     description: "Modernit kaivinkoneet ja ammattitaitoiset kuljettajat vaativimpiinkin kohteisiin.",
+    features: [
+      "Kaivuu- ja täyttötyöt",
+      "Rakennustyömaiden valmistelu",
+      "Jäteveden kaivot",
+      "Pohjaveden hallinta"
+    ],
     href: "/palvelut/kaivinkoneurakointi",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: TreePine,
     title: "Metsämuokkaukset",
     description: "Metsämaan muokkaus istutuksia ja uudistamista varten. Laikkumätästys ja äestys.",
+    features: [
+      "Metsämaan muokkaus",
+      "Laikkumätästys",
+      "Äestys ja tasaus",
+      "Istutusvalmistelut"
+    ],
     href: "/palvelut/metsamuokkaukset",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: Route,
     title: "Teiden ja pihojen pohjatyöt",
     description: "Tie- ja piharakentamisen pohjatyöt suunnitelmien mukaan laadukkaasti toteutettuna.",
+    features: [
+      "Tienpohjatyöt",
+      "Piha-alueiden valmistelu",
+      "Pysäköintialueiden rakentaminen",
+      "Kulkuväylien tasaus"
+    ],
     href: "/palvelut/tiet-ja-pihat",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: Waves,
     title: "Ojitukset",
     description: "Peltojen ja metsien ojitus sekä salaojitustyöt. Parannamme maan kuivatusta.",
+    features: [
+      "Peltojen ojitus",
+      "Salaojitustyöt",
+      "Kuivatusjärjestelmät",
+      "Ojien kunnossapito"
+    ],
     href: "/palvelut/ojitukset",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: Zap,
     title: "Maakaapelointi",
     description: "Sähköverkkojen maakaapeloinnit. Turvallinen ja huomaamaton sähkönjakelu.",
+    features: [
+      "Sähköverkon maakaapelointi",
+      "Kaapelien asennus",
+      "Turvallinen toteutus",
+      "Lopputarkastus"
+    ],
     href: "/palvelut/maakaapelointi",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     icon: Users,
     title: "Kuljettajapalvelut",
     description: "Kokeneet kuljettajat vuokrattavissa kalustoosi. Ammattitaito käytössäsi.",
+    features: [
+      "Kokeneet kuljettajat",
+      "Moderni kalusto",
+      "Joustava palvelu",
+      "Ammattitaitoinen toteutus"
+    ],
     href: "/palvelut/kuljettajapalvelut",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
 ];
 
@@ -81,43 +138,68 @@ export function Services() {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service) => {
+        {/* Services List */}
+        <div className="space-y-32">
+          {services.slice(0, 4).map((service, index) => {
             const Icon = service.icon;
-            return (
-              <Link key={service.title} to={service.href}>
-                <Card className="h-full group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 bg-card">
-                  <CardContent className="p-6 space-y-4">
-                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary transition-colors">
-                      <Icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+            const isEven = index % 2 === 0;
+            
+              return (
+                <div
+                  key={service.title}
+                  className={`${service.image ? 'grid grid-cols-1 lg:grid-cols-2' : 'max-w-3xl'} gap-12 items-center min-h-screen py-16 ${
+                    !isEven && service.image ? "lg:flex-row-reverse" : ""
+                  }`}
+                >
+                {/* Content */}
+                <div className={service.image && !isEven ? "lg:order-2" : ""}>
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start space-x-3">
+                        <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button asChild className="btn-primary">
+                    <Link to="/yhteystiedot" className="flex items-center">
+                      <span>Pyydä tarjous</span>
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Link>
+                  </Button>
+                </div>
+
+                {/* Image */}
+                {service.image && (
+                  <div className={isEven ? "" : "lg:order-1"}>
+                    <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <h3 className="font-bold text-lg text-foreground group-hover:text-primary transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-                    <div className="flex items-center text-primary font-medium text-sm pt-2">
-                      Lue lisää
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <Link
-            to="/palvelut"
-            className="inline-flex items-center text-primary font-semibold hover:underline"
-          >
-            Katso kaikki palvelumme
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Link>
+        {/* CTA - Tutustu kaikkiin palveluihin */}
+        <div className="text-center mt-16">
+          <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <Link to="/palvelut" className="flex items-center">
+              <span>Tutustu kaikkiin palveluihin</span>
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

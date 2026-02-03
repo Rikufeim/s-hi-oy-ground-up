@@ -9,7 +9,6 @@ const navigation = [
   { name: "Palvelut", href: "/palvelut" },
   { name: "Referenssit", href: "/referenssit" },
   { name: "Yritys", href: "/yritys" },
-  { name: "Blogi", href: "/blogi" },
   { name: "Yhteystiedot", href: "/yhteystiedot" },
 ];
 
@@ -42,28 +41,17 @@ export function Header() {
       <div className="container-custom">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">S</span>
-            </div>
-            <div className="flex flex-col">
-              <span className={cn(
-                "font-bold text-xl transition-colors",
-                isScrolled ? "text-foreground" : "text-white"
-              )}>
-                Sähi Oy
-              </span>
-              <span className={cn(
-                "text-xs transition-colors",
-                isScrolled ? "text-muted-foreground" : "text-white/80"
-              )}>
-                Maanrakennus
-              </span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <span className={cn(
+              "font-bold text-xl transition-colors",
+              "text-primary"
+            )}>
+              Sähi Oy
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8 ml-auto mr-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -82,8 +70,8 @@ export function Header() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center space-x-4">
+          {/* Phone Number */}
+          <div className="hidden lg:flex items-center">
             <a
               href="tel:+358401234567"
               className={cn(
@@ -94,9 +82,6 @@ export function Header() {
               <Phone className="w-4 h-4" />
               <span>040 123 4567</span>
             </a>
-            <Button asChild className="btn-primary">
-              <Link to="/yhteystiedot">Pyydä tarjous</Link>
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -131,7 +116,7 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
-              <div className="px-4 pt-4 space-y-3">
+              <div className="px-4 pt-4">
                 <a
                   href="tel:+358401234567"
                   className="flex items-center space-x-2 text-foreground font-medium"
@@ -139,9 +124,6 @@ export function Header() {
                   <Phone className="w-4 h-4" />
                   <span>040 123 4567</span>
                 </a>
-                <Button asChild className="w-full btn-primary">
-                  <Link to="/yhteystiedot">Pyydä tarjous</Link>
-                </Button>
               </div>
             </div>
           </div>

@@ -11,11 +11,11 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="container-custom relative z-10 pt-20">
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 pt-20">
         <div className="max-w-3xl space-y-8 animate-fade-in">
           
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight text-left">
             Maanrakennustyöt ja sähköverkkojen maakaapeloinnit{" "}
             <span className="text-primary">Pohjois-Pohjanmaalla</span>
           </h1>
@@ -32,10 +32,10 @@ export function Hero() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-secondary text-lg">
-              <a href="tel:+358401234567">
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-secondary text-lg bg-transparent">
+              <a href="tel:+358401234567" className="flex items-center">
                 <Phone className="mr-2 w-5 h-5" />
-                Soita meille
+                <span>Soita meille</span>
               </a>
             </Button>
           </div>
@@ -55,13 +55,6 @@ export function Hero() {
               <p className="text-white/80 text-sm">Tyytyväiset asiakkaat</p>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-8 h-12 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-white rounded-full animate-pulse" />
         </div>
       </div>
     </section>;
