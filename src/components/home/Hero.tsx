@@ -2,28 +2,18 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-excavator.jpg";
-
 export function Hero() {
-  return (
-    <section className="relative min-h-screen flex items-center">
+  return <section className="relative min-h-screen flex items-center">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Kaivinkone työssä maanrakennuskohteessa"
-          className="w-full h-full object-cover"
-        />
+        <img src={heroImage} alt="Kaivinkone työssä maanrakennuskohteessa" className="w-full h-full object-cover" />
         <div className="absolute inset-0 gradient-overlay" />
       </div>
 
       {/* Content */}
       <div className="container-custom relative z-10 pt-20">
         <div className="max-w-3xl space-y-8 animate-fade-in">
-          <div className="inline-block bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2">
-            <span className="text-primary font-semibold text-sm">
-              Luotettava kumppani vuodesta 2020
-            </span>
-          </div>
+          
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
             Maanrakennustyöt ja sähköverkkojen maakaapeloinnit{" "}
@@ -42,12 +32,7 @@ export function Hero() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-secondary text-lg"
-            >
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-secondary text-lg">
               <a href="tel:+358401234567">
                 <Phone className="mr-2 w-5 h-5" />
                 Soita meille
@@ -79,6 +64,5 @@ export function Hero() {
           <div className="w-1.5 h-3 bg-white rounded-full animate-pulse" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
