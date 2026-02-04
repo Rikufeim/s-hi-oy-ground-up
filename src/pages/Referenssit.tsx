@@ -34,7 +34,7 @@ const Referenssit = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-secondary">
         <div className="container-custom">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl animate-fade-in">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Referenssit
             </span>
@@ -54,7 +54,11 @@ const Referenssit = () => {
           <h2 className="text-3xl font-bold text-foreground mb-12">Projekteja</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden group">
+              <Card 
+                key={index} 
+                className="overflow-hidden group animate-fade-in"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
                 <div className="aspect-video overflow-hidden">
                   <img
                     src={project.image}

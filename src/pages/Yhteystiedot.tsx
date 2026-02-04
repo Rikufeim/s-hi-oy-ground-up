@@ -40,7 +40,7 @@ const Yhteystiedot = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-secondary">
         <div className="container-custom">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl animate-fade-in">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Yhteystiedot
             </span>
@@ -59,7 +59,7 @@ const Yhteystiedot = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div>
+            <div className="animate-fade-in">
               <h2 className="text-2xl font-bold text-foreground mb-6">Lähetä tarjouspyyntö</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -112,7 +112,7 @@ const Yhteystiedot = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-8">
+            <div className="space-y-8 animate-fade-in" style={{ animationDelay: '200ms' }}>
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-6">Yhteystiedot</h2>
                 <ul className="space-y-6">

@@ -20,7 +20,7 @@ const Yritys = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-secondary">
         <div className="container-custom">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl animate-fade-in">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Meistä
             </span>
@@ -39,7 +39,7 @@ const Yritys = () => {
       <section className="section-padding">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="animate-fade-in">
               <h2 className="text-3xl font-bold text-foreground mb-6">Tarinamme</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -56,7 +56,7 @@ const Yritys = () => {
                 </p>
               </div>
             </div>
-            <div className="aspect-video rounded-2xl overflow-hidden">
+            <div className="aspect-video rounded-2xl overflow-hidden animate-fade-in" style={{ animationDelay: '200ms' }}>
               <img
                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Sähi Oy tiimi"
@@ -72,8 +72,12 @@ const Yritys = () => {
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Arvomme</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value) => (
-              <div key={value.title} className="bg-card p-6 rounded-xl">
+            {values.map((value, index) => (
+              <div 
+                key={value.title} 
+                className="bg-card p-6 rounded-xl animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Check className="w-6 h-6 text-primary" />
                 </div>
@@ -90,8 +94,12 @@ const Yritys = () => {
         <div className="container-custom">
           <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Tiimimme</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            {team.map((member) => (
-              <div key={member.name} className="text-center">
+            {team.map((member, index) => (
+              <div 
+                key={member.name} 
+                className="text-center animate-fade-in"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
                 <div className="w-32 h-32 bg-muted rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-4xl font-bold text-primary">
                     {member.name.charAt(0)}
