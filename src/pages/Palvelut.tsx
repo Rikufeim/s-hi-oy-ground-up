@@ -139,7 +139,7 @@ const Palvelut = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-secondary">
         <div className="container-custom">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl animate-fade-in">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Palvelumme
             </span>
@@ -172,9 +172,10 @@ const Palvelut = () => {
                 <div
                   key={service.title}
                   id={serviceId}
-                  className={`${service.image ? 'grid grid-cols-1 lg:grid-cols-2' : 'max-w-3xl'} gap-12 items-center min-h-screen py-16 scroll-mt-32 ${
+                  className={`${service.image ? 'grid grid-cols-1 lg:grid-cols-2' : 'max-w-3xl'} gap-12 items-center min-h-screen py-16 scroll-mt-32 animate-fade-in ${
                     !isEven && service.image ? "lg:flex-row-reverse" : ""
                   }`}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {/* Content */}
                   <div className={service.image && !isEven ? "lg:order-2" : ""}>

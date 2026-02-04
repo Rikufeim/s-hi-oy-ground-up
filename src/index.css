@@ -143,6 +143,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Animation fill mode for staggered animations */
+.animate-fade-in {
+  animation-fill-mode: both;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
