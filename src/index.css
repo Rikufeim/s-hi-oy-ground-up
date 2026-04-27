@@ -148,20 +148,27 @@ html {
   animation-fill-mode: both;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+@keyframes hero-carousel-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: hsl(var(--muted));
+.hero-carousel-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  animation: hero-carousel-scroll 30s linear infinite;
 }
 
-::-webkit-scrollbar-thumb {
-  background: hsl(0 0% 30%);
-  border-radius: 5px;
+.hero-carousel-item {
+  width: 280px;
+  height: 170px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 0.75rem;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(0 0% 40%);
-}

@@ -2,6 +2,9 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Calendar } from "lucide-react";
+import maakaapelointi from "@/assets/referenssit/maakaapelointi.png";
+import talonpohjaJcb from "@/assets/referenssit/talonpohja-jcb.png";
+import homeKaivinkone from "@/assets/home-kaivinkone.png";
 
 const posts = [
   {
@@ -9,21 +12,21 @@ const posts = [
     excerpt: "Miksi sähköverkon maakaapelointi on kannattava investointi? Lue lisää hyödyistä.",
     date: "15.1.2026",
     slug: "maakaapeloinnin-hyodyt",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: maakaapelointi,
   },
   {
     title: "Talonpohjan tekeminen vaihe vaiheelta",
     excerpt: "Näin talonpohjatyöt etenevät - opi prosessin eri vaiheet.",
     date: "10.1.2026",
     slug: "talonpohjan-tekeminen",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: talonpohjaJcb,
   },
   {
     title: "Kotitalousvähennys maanrakennustöissä",
     excerpt: "Hyödynnä kotitalousvähennys maanrakennuspalveluissa - näin se onnistuu.",
     date: "5.1.2026",
     slug: "kotitalousvahennys",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: homeKaivinkone,
   },
 ];
 

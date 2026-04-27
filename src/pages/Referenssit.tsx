@@ -1,30 +1,55 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
+import pihakivetys from "@/assets/referenssit/pihakivetys.png";
+import talonpohjaJcb from "@/assets/referenssit/talonpohja-jcb.png";
+import metsamuokkaus from "@/assets/referenssit/metsamuokkaus.png";
+import pihaAlueKivet from "@/assets/referenssit/piha-alue-kivet.png";
+import maakaapelointi from "@/assets/referenssit/maakaapelointi.png";
+import pihatieSora from "@/assets/referenssit/pihatie-sora.png";
+import kantojyrsinta from "@/assets/referenssit/kantojyrsinta.png";
 
 const projects = [
   {
-    title: "Omakotitalon talonpohja",
-    location: "Siikajoki",
-    description: "Toteutimme kattavan talonpohjatyön omakotitalolle, sisältäen maansiirto-, tasaus- ja tiivistystyöt.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Maakaapelointiprojekti",
-    location: "Raahe",
-    description: "Laaja sähköverkon maakaapelointiurakka yhteistyössä paikallisen sähköyhtiön kanssa.",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Piha-alueen rakentaminen",
+    title: "Kivimuurin ja piharakenteiden toteutus",
     location: "Oulu",
-    description: "Yritysasiakkaan piha-alueen pohjatyöt ja pysäköintialueen rakentaminen.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    description: "Rakensimme näyttävän kivimuurin sekä viimeistelimme piha-alueen muodot ja pintarakenteet.",
+    image: pihakivetys,
   },
   {
-    title: "Peltojen ojitus",
+    title: "Omakotitalon pohjatyöt",
+    location: "Siikajoki",
+    description: "Teimme omakotitalokohteen kattavat pohjatyöt mittatarkasti perustuksia varten.",
+    image: talonpohjaJcb,
+  },
+  {
+    title: "Metsämuokkaus urakointi",
+    location: "Pohjois-Pohjanmaa",
+    description: "Suoritimme metsämaan muokkausta ja kulku-uran valmistelua tehokkaasti vaativassa maastossa.",
+    image: metsamuokkaus,
+  },
+  {
+    title: "Pihan kiviasennukset",
+    location: "Raahe",
+    description: "Toteutimme piha-alueelle kiviasennukset ja maaston muotoilun toimivaksi kokonaisuudeksi.",
+    image: pihaAlueKivet,
+  },
+  {
+    title: "Maakaapeloinnin kaivuutyöt",
     location: "Liminka",
-    description: "Maatalousasiakkaan peltojen ojitustyöt kuivatuksen parantamiseksi.",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    description: "Kaivoimme ja valmistelimme kaapelilinjat turvallisesti sähköverkon maakaapelointia varten.",
+    image: maakaapelointi,
+  },
+  {
+    title: "Pihatien kantavat rakennekerrokset",
+    location: "Kempele",
+    description: "Rakensimme pihatien pohjat ja murskekerrokset kestävyyttä sekä hyvää kuivatusratkaisua varten.",
+    image: pihatieSora,
+  },
+  {
+    title: "Kantojyrsintä metsäkohteessa",
+    location: "Pyhäjoki",
+    description: "Poistimme kantoja tehokkaasti erikoisvarusteisella kalustolla jatkotöiden nopeuttamiseksi.",
+    image: kantojyrsinta,
   },
 ];
 

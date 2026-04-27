@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Check } from "lucide-react";
+import talonpohjaJcb from "@/assets/referenssit/talonpohja-jcb.png";
 
 const values = [
   { title: "Luotettavuus", description: "Pidämme kiinni sovituista aikatauluista ja lupauksista." },
@@ -58,7 +59,7 @@ const Yritys = () => {
             </div>
             <div className="aspect-video rounded-2xl overflow-hidden animate-fade-in" style={{ animationDelay: '200ms' }}>
               <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src={talonpohjaJcb}
                 alt="Sähi Oy tiimi"
                 className="w-full h-full object-cover"
               />

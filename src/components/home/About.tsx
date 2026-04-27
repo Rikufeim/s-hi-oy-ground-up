@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
+import homeKaivinkone from "@/assets/home-kaivinkone.png";
+import homeKivipiha from "@/assets/home-kivipiha.png";
 
 const features = [
   "Yli 5 vuoden kokemus alalta",
@@ -22,7 +24,7 @@ export function About() {
               <div className="space-y-4">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-muted">
                   <img
-                    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    src={homeKaivinkone}
                     alt="Kaivinkone työmaalla"
                     className="w-full h-full object-cover"
                   />
@@ -31,7 +33,7 @@ export function About() {
               <div className="space-y-4 pt-8">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-muted">
                   <img
-                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    src={homeKivipiha}
                     alt="Maanrakennustyömaa"
                     className="w-full h-full object-cover"
                   />
