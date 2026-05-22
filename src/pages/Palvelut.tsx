@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { PageHero } from "@/components/layout/PageHero";
 import { Link } from "react-router-dom";
 import {
   Home,
@@ -105,24 +106,14 @@ const services = [
 const Palvelut = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-secondary">
-        <div className="container-custom">
-          <div className="max-w-3xl animate-fade-in">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Palvelumme
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6">
-              Maanrakennustyöt ja sähköverkkojen maakaapeloinnit Pohjois-Pohjanmaalla
-            </h1>
-            <p className="text-white/80 text-xl">
-              Maanrakennustyöt vaativat erikoiskalustoa ja -osaamista, joten ne on syytä antaa
-              ammattilaisten toteutettaviksi. Meillä on pitkä kokemus erilaisista maanrakennusalan
-              töistä ja sähköverkkojen maakaapeloinneista.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        blur="sm"
+        image={homeKaivinkone}
+        imageAlt="Kaivinkoneurakointi"
+        eyebrow="Palvelumme"
+        title="Maanrakennustyöt ja sähköverkkojen maakaapeloinnit Pohjois-Pohjanmaalla"
+        description="Maanrakennustyöt vaativat erikoiskalustoa ja -osaamista, joten ne on syytä antaa ammattilaisten toteutettaviksi. Meillä on pitkä kokemus erilaisista maanrakennusalan töistä ja sähköverkkojen maakaapeloinneista."
+      />
 
       <section className="py-12 bg-muted">
         <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-8">

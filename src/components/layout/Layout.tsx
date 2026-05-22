@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { CookieConsent } from "@/components/legal/CookieConsent";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
@@ -12,6 +13,7 @@ export function Layout({ children }: LayoutProps) {
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 }

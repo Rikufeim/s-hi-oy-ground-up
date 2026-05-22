@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { PageHero } from "@/components/layout/PageHero";
 import { Check } from "lucide-react";
 import talonpohjaJcb from "@/assets/referenssit/talonpohja-jcb.png";
 
@@ -18,23 +19,14 @@ const team = [
 const Yritys = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-secondary">
-        <div className="container-custom">
-          <div className="max-w-3xl animate-fade-in">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Meistä
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6">
-              Luotettava perheyritys
-            </h1>
-            <p className="text-white/80 text-xl">
-              Sähi Oy on vuonna 2020 perustettu perheyritys, joka tarjoaa kattavia 
-              maanrakennus- ja maakaapelointipalveluita Pohjois-Pohjanmaan alueella.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        blur="sm"
+        image={talonpohjaJcb}
+        imageAlt="Talonpohjatyöt"
+        eyebrow="Meistä"
+        title="Luotettava perheyritys"
+        description="Sähi Oy on vuonna 2020 perustettu perheyritys, joka tarjoaa kattavia maanrakennus- ja maakaapelointipalveluita Pohjois-Pohjanmaan alueella."
+      />
 
       {/* Story */}
       <section className="section-padding">

@@ -1,4 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
+import { PageHero } from "@/components/layout/PageHero";
+import metsamuokkaus from "@/assets/referenssit/metsamuokkaus.png";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -33,22 +35,13 @@ const posts = [
 const Blogi = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-secondary">
-        <div className="container-custom">
-          <div className="max-w-3xl animate-fade-in">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Blogi
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6">
-              Ajankohtaista
-            </h1>
-            <p className="text-white/80 text-xl">
-              Uutisia, vinkkejä ja ajankohtaista tietoa maanrakennus- ja maakaapelointialalta.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        image={metsamuokkaus}
+        imageAlt="Metsämuokkaus"
+        eyebrow="Blogi"
+        title="Ajankohtaista"
+        description="Uutisia, vinkkejä ja ajankohtaista tietoa maanrakennus- ja maakaapelointialalta."
+      />
 
       {/* Blog Posts */}
       <section className="section-padding">

@@ -1,5 +1,10 @@
+import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
-import { Card, CardContent } from "@/components/ui/card";
+import { PageHero } from "@/components/layout/PageHero";
+import {
+  Dialog,
+  DialogContent,
+} from "@/components/ui/dialog";
 import pihakivetys from "@/assets/referenssit/pihakivetys.png";
 import talonpohjaJcb from "@/assets/referenssit/talonpohja-jcb.png";
 import metsamuokkaus from "@/assets/referenssit/metsamuokkaus.png";
@@ -8,99 +13,64 @@ import maakaapelointi from "@/assets/referenssit/maakaapelointi.png";
 import pihatieSora from "@/assets/referenssit/pihatie-sora.png";
 import kantojyrsinta from "@/assets/referenssit/kantojyrsinta.png";
 
-const projects = [
-  {
-    title: "Kivimuurin ja piharakenteiden toteutus",
-    location: "Oulu",
-    description: "Rakensimme näyttävän kivimuurin sekä viimeistelimme piha-alueen muodot ja pintarakenteet.",
-    image: pihakivetys,
-  },
-  {
-    title: "Omakotitalon pohjatyöt",
-    location: "Siikajoki",
-    description: "Teimme omakotitalokohteen kattavat pohjatyöt mittatarkasti perustuksia varten.",
-    image: talonpohjaJcb,
-  },
-  {
-    title: "Metsämuokkaus urakointi",
-    location: "Pohjois-Pohjanmaa",
-    description: "Suoritimme metsämaan muokkausta ja kulku-uran valmistelua tehokkaasti vaativassa maastossa.",
-    image: metsamuokkaus,
-  },
-  {
-    title: "Pihan kiviasennukset",
-    location: "Raahe",
-    description: "Toteutimme piha-alueelle kiviasennukset ja maaston muotoilun toimivaksi kokonaisuudeksi.",
-    image: pihaAlueKivet,
-  },
-  {
-    title: "Maakaapeloinnin kaivuutyöt",
-    location: "Liminka",
-    description: "Kaivoimme ja valmistelimme kaapelilinjat turvallisesti sähköverkon maakaapelointia varten.",
-    image: maakaapelointi,
-  },
-  {
-    title: "Pihatien kantavat rakennekerrokset",
-    location: "Kempele",
-    description: "Rakensimme pihatien pohjat ja murskekerrokset kestävyyttä sekä hyvää kuivatusratkaisua varten.",
-    image: pihatieSora,
-  },
-  {
-    title: "Kantojyrsintä metsäkohteessa",
-    location: "Pyhäjoki",
-    description: "Poistimme kantoja tehokkaasti erikoisvarusteisella kalustolla jatkotöiden nopeuttamiseksi.",
-    image: kantojyrsinta,
-  },
+const referenceImages = [
+  { src: pihakivetys, alt: "Kivimuuri ja piharakenteet" },
+  { src: talonpohjaJcb, alt: "Talonpohjatyöt" },
+  { src: metsamuokkaus, alt: "Metsämuokkaus" },
+  { src: pihaAlueKivet, alt: "Pihan kiviasennukset" },
+  { src: maakaapelointi, alt: "Maakaapeloinnin kaivuutyöt" },
+  { src: pihatieSora, alt: "Pihatien rakennekerrokset" },
+  { src: kantojyrsinta, alt: "Kantojyrsintä" },
 ];
 
 const Referenssit = () => {
+  const [selectedImage, setSelectedImage] = useState<(typeof referenceImages)[number] | null>(null);
+
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-secondary">
-        <div className="container-custom">
-          <div className="max-w-3xl animate-fade-in">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Referenssit
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6">
-              Toteutetut projektit
-            </h1>
-            <p className="text-white/80 text-xl">
-              Tutustu valittuihin referensseihimme ja lue asiakkaidemme kokemuksia.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        blur="sm"
+        image={pihakivetys}
+        imageAlt="Referenssikuvia"
+        eyebrow="Referenssit"
+        title="Toteutetut projektit"
+        description="Valittuja kuvia toteutetuista kohteista."
+      />
 
-      {/* Projects Grid */}
       <section className="section-padding">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold text-foreground mb-12">Projekteja</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Card 
-                key={index} 
-                className="overflow-hidden group animate-fade-in"
-                style={{ animationDelay: `${index * 150}ms` }}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {referenceImages.map((image, index) => (
+              <button
+                key={image.src}
+                type="button"
+                onClick={() => setSelectedImage(image)}
+                className="group relative overflow-hidden rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 animate-fade-in"
+                style={{ animationDelay: `${index * 80}ms` }}
+                aria-label={`Avaa kuva: ${image.alt}`}
               >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <span className="text-primary text-sm font-medium">{project.location}</span>
-                  <h3 className="text-xl font-bold text-foreground mt-1 mb-3">{project.title}</h3>
-                  <p className="text-muted-foreground">{project.description}</p>
-                </CardContent>
-              </Card>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </button>
             ))}
           </div>
         </div>
       </section>
+
+      <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
+        <DialogContent className="max-w-5xl w-[calc(100%-2rem)] border-0 bg-transparent p-0 shadow-none">
+          {selectedImage && (
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="max-h-[85vh] w-full rounded-lg object-contain"
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </Layout>
   );
 };

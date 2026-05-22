@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -21,100 +21,76 @@ export function Header() {
   }, [location]);
 
   return (
-    <header
-      className={cn(
-        "absolute inset-x-0 top-0 z-50 w-full",
-        "bg-transparent"
-      )}
-    >
+    <header className="absolute inset-x-0 top-0 z-50 w-full">
       <div className="container-custom">
-        <nav className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <span className={cn(
-              "font-bold text-xl transition-colors",
-              "text-primary"
-            )}>
-              Sähi Oy
-            </span>
-          </Link>
+        <div className="nav-bar">
+          <nav className="flex items-center justify-between h-20 px-4 sm:px-6">
+            <Link to="/" className="flex items-center">
+              <span className="font-bold text-xl text-primary transition-colors">Sähi Oy</span>
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8 ml-auto mr-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={cn(
-                  "font-medium transition-colors hover:text-primary",
-                  location.pathname === item.href
-                    ? "text-primary"
-                    : "text-white"
-                )}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* Phone Number */}
-          <div className="hidden lg:flex items-center">
-            <a
-              href="tel:+358401234567"
-              className={cn(
-                "flex items-center space-x-2 font-medium transition-colors",
-                "text-white"
-              )}
-            >
-              <Phone className="w-4 h-4" />
-              <span>040 123 4567</span>
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-white" />
-            ) : (
-              <Menu className="w-6 h-6 text-white" />
-            )}
-          </button>
-        </nav>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden bg-transparent border-t border-white/20">
-            <div className="py-4 space-y-2">
+            <div className="hidden lg:flex items-center space-x-8 ml-auto mr-8">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   className={cn(
-                    "block px-4 py-3 font-medium transition-colors hover:bg-white/10 rounded-lg",
+                    "font-medium transition-colors hover:text-primary",
                     location.pathname === item.href
-                      ? "text-primary bg-white/10"
-                      : "text-white"
+                      ? "text-primary"
+                      : "text-white/90"
                   )}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="px-4 pt-4">
-                <a
-                  href="tel:+358401234567"
-                  className="flex items-center space-x-2 text-white font-medium"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>040 123 4567</span>
-                </a>
+            </div>
+
+            <div className="hidden lg:flex items-center">
+              <Button asChild className="btn-primary">
+                <Link to="/yhteystiedot">Pyydä tarjous</Link>
+              </Button>
+            </div>
+
+            <button
+              className="lg:hidden p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 text-white" />
+              ) : (
+                <Menu className="w-6 h-6 text-white" />
+              )}
+            </button>
+          </nav>
+
+          {isMobileMenuOpen && (
+            <div className="lg:hidden border-t border-white/10 px-4 sm:px-6">
+              <div className="py-4 space-y-2">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={cn(
+                      "block px-4 py-3 font-medium transition-colors hover:bg-white/10 rounded-lg",
+                      location.pathname === item.href
+                        ? "text-primary bg-white/10"
+                        : "text-white/90"
+                    )}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <div className="pt-4 pb-4">
+                  <Button asChild className="w-full btn-primary">
+                    <Link to="/yhteystiedot">Pyydä tarjous</Link>
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </header>
   );

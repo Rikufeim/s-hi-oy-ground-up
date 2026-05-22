@@ -9,6 +9,8 @@ import Palvelut from "./pages/Palvelut";
 import Referenssit from "./pages/Referenssit";
 import Yritys from "./pages/Yritys";
 import Yhteystiedot from "./pages/Yhteystiedot";
+import Tietosuoja from "./pages/Tietosuoja";
+import Evasteet from "./pages/Evasteet";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/referenssit" element={<Referenssit />} />
           <Route path="/yritys" element={<Yritys />} />
           <Route path="/yhteystiedot" element={<Yhteystiedot />} />
+          <Route path="/tietosuoja" element={<Tietosuoja />} />
+          <Route path="/evasteet" element={<Evasteet />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

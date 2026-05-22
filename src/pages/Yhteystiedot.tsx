@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { PageHero } from "@/components/layout/PageHero";
+import homeKuljetus from "@/assets/home-kuljetus.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -37,22 +40,14 @@ const Yhteystiedot = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-secondary">
-        <div className="container-custom">
-          <div className="max-w-3xl animate-fade-in">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Yhteystiedot
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-6">
-              Ota yhteyttä
-            </h1>
-            <p className="text-white/80 text-xl">
-              Pyydä tarjous tai kysy lisätietoja palveluistamme. Vastaamme yhteydenottoihin nopeasti.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        blur="sm"
+        image={homeKuljetus}
+        imageAlt="Maanrakennuskuljetus"
+        eyebrow="Yhteystiedot"
+        title="Ota yhteyttä"
+        description="Pyydä tarjous tai kysy lisätietoja palveluistamme. Vastaamme yhteydenottoihin nopeasti."
+      />
 
       {/* Contact Section */}
       <section className="section-padding">
@@ -108,6 +103,15 @@ const Yhteystiedot = () => {
                 <Button type="submit" className="w-full btn-primary" disabled={isSubmitting}>
                   {isSubmitting ? "Lähetetään..." : "Lähetä viesti"}
                 </Button>
+
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Lähettämällä lomakkeen hyväksyt henkilötietojesi käsittelyn tarjouspyyntöä varten
+                  {" "}
+                  <Link to="/tietosuoja" className="text-primary hover:underline">
+                    tietosuojaselosteen
+                  </Link>{" "}
+                  mukaisesti.
+                </p>
               </form>
             </div>
 

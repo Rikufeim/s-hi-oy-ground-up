@@ -13,6 +13,9 @@ import {
   Check,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SplitFeatureSection } from "@/components/home/SplitFeatureSection";
+import { ContactPromoSection } from "@/components/home/ContactPromoSection";
+import { PageHero } from "@/components/layout/PageHero";
 import homeKuljetus from "@/assets/home-kuljetus.png";
 import homeKaivinkone from "@/assets/home-kaivinkone.png";
 import homeKivipiha from "@/assets/home-kivipiha.png";
@@ -113,13 +116,27 @@ const carouselImages = [
   kantojyrsinta,
 ];
 
+const maanrakennusFeatures = [
+  "Kattava kalusto ja kokeneet ammattilaiset",
+  "Talonpohjat, kaivuu- ja täyttötyöt",
+  "Pienet pihaurakat ja laajemmat rakennuskohteet",
+  "Tehokas ja huolellinen toteutus aikataulussa",
+];
+
+const maakaapelointiFeatures = [
+  "Kaapeliojien kaivuutyöt ja putkitukset",
+  "Kaapelien suojaus ja asennusvalmistelu",
+  "Turvallinen ja säännösten mukainen toteutus",
+  "Yhteistyö sähköverkkoyhtiöiden kanssa",
+];
+
 export function Services() {
   const repeatedCarouselImages = useMemo(() => [...carouselImages, ...carouselImages], []);
 
   return (
-    <section className="section-padding bg-muted">
-      <div className="container-custom">
-        <div className="mb-12 overflow-hidden rounded-2xl border border-border/60 bg-card/60 py-4">
+    <>
+      <section className="bg-muted">
+        <div className="w-full overflow-hidden">
           <div className="hero-carousel-track">
             {repeatedCarouselImages.map((image, index) => (
               <div key={`${image}-${index}`} className="hero-carousel-item">
@@ -132,81 +149,85 @@ export function Services() {
             ))}
           </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          <div className="bg-card rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Maanrakennustyöt</h2>
-            <p className="text-muted-foreground mb-6">
-              Meillä on kattava valikoima erilaisia työkoneita ja osaavat tekijät. Toteutamme sekä
-              pienet että suuret maanrakennustyöt tehokkaasti ja huolellisesti.
-            </p>
-            <Button asChild className="btn-primary">
-              <Link to="/yhteystiedot">Ota yhteyttä</Link>
-            </Button>
-          </div>
-          <div className="bg-card rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Sähköverkkojen maakaapelointi</h2>
-            <p className="text-muted-foreground mb-6">
-              Teemme maanrakennustyöt sähköverkkojen maakaapelointia varten. Palvelumme kattaa
-              kaapeliojien kaivuutyöt, putkitukset ja kaapelien suojaamisen.
-            </p>
-            <Button asChild className="btn-primary">
-              <Link to="/yhteystiedot">Ota yhteyttä</Link>
-            </Button>
-          </div>
-        </div>
+      <SplitFeatureSection
+        title="Maanrakennustyöt"
+        description="Meillä on kattava valikoima erilaisia työkoneita ja osaavat tekijät. Toteutamme sekä pienet että suuret maanrakennustyöt tehokkaasti ja huolellisesti Pohjois-Pohjanmaalla."
+        features={maanrakennusFeatures}
+        ctaLabel="Ota yhteyttä"
+        ctaHref="/yhteystiedot"
+        image={homeKaivinkone}
+        imageAlt="Maanrakennustyöt kaivinkoneella"
+      />
 
-        <div className="max-w-3xl mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">Palvelumme</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Palveluitamme</h2>
-          <p className="text-muted-foreground text-lg mb-8">
-            Yksityisille tarjoamamme palvelut ovat kotitalousvähennyskelpoisia. Lisätietoa löydät
-            Verohallinnon sivuilta.
-          </p>
-        </div>
+      <SplitFeatureSection
+        title="Sähköverkkojen maakaapelointi"
+        description="Teemme maanrakennustyöt sähköverkkojen maakaapelointia varten. Palvelumme kattaa kaapeliojien kaivuutyöt, putkitukset ja kaapelien suojaamisen."
+        features={maakaapelointiFeatures}
+        ctaLabel="Ota yhteyttä"
+        ctaHref="/yhteystiedot"
+        image={maakaapelointi}
+        imageAlt="Sähköverkkojen maakaapelointi"
+        reverse
+      />
 
-        <div className="space-y-32">
-          {services.slice(0, 4).map((service, index) => {
-            const isEven = index % 2 === 0;
+      <ContactPromoSection />
 
-            return (
-              <div
-                key={service.title}
-                className={`${service.image ? "grid grid-cols-1 lg:grid-cols-2" : "max-w-3xl"} gap-12 items-center min-h-screen py-16 ${
-                  !isEven && service.image ? "lg:flex-row-reverse" : ""
-                }`}
-              >
-                <div className={service.image && !isEven ? "lg:order-2" : ""}>
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{service.title}</h3>
-                  <p className="text-muted-foreground text-lg mb-6 leading-relaxed">{service.description}</p>
-                  <ul className="space-y-3 mb-8">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start space-x-3">
-                        <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button asChild className="btn-primary">
-                    <Link to="/yhteystiedot" className="flex items-center">
-                      <span>Ota yhteyttä</span>
-                      <ArrowRight className="ml-2 w-5 h-5" />
-                    </Link>
-                  </Button>
-                </div>
+      <section className="bg-muted">
+        <PageHero
+          image={homeKivipiha}
+          imageAlt="Piharakentaminen ja maanrakennus"
+          eyebrow="Palvelumme"
+          title="Palveluitamme"
+          description="Yksityisille tarjoamamme palvelut ovat kotitalousvähennyskelpoisia. Lisätietoa löydät Verohallinnon sivuilta."
+          align="center"
+        />
 
-                {service.image && (
-                  <div className={isEven ? "" : "lg:order-1"}>
-                    <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
-                      <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
-                    </div>
+        <div className="container-custom section-padding">
+          <div className="space-y-32">
+            {services.slice(0, 4).map((service, index) => {
+              const isEven = index % 2 === 0;
+
+              return (
+                <div
+                  key={service.title}
+                  className={`${service.image ? "grid grid-cols-1 lg:grid-cols-2" : "max-w-3xl"} gap-12 items-center min-h-screen py-16 ${
+                    !isEven && service.image ? "lg:flex-row-reverse" : ""
+                  }`}
+                >
+                  <div className={service.image && !isEven ? "lg:order-2" : ""}>
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{service.title}</h3>
+                    <p className="text-muted-foreground text-lg mb-6 leading-relaxed">{service.description}</p>
+                    <ul className="space-y-3 mb-8">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start space-x-3">
+                          <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                          <span className="text-foreground">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button asChild className="btn-primary">
+                      <Link to="/yhteystiedot" className="flex items-center">
+                        <span>Ota yhteyttä</span>
+                        <ArrowRight className="ml-2 w-5 h-5" />
+                      </Link>
+                    </Button>
                   </div>
-                )}
-              </div>
-            );
-          })}
+
+                  {service.image && (
+                    <div className={isEven ? "" : "lg:order-1"}>
+                      <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
+                        <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

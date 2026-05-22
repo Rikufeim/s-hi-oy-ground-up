@@ -133,8 +133,73 @@
     @apply py-16 md:py-24;
   }
 
-  .gradient-overlay {
-    background: linear-gradient(to right, hsl(var(--brand-black) / 0.8) 0%, hsl(var(--brand-black) / 0.4) 50%, transparent 100%);
+  .nav-bar {
+    @apply bg-secondary rounded-b-2xl;
+    box-shadow:
+      0 8px 24px hsl(0 0% 0% / 0.45),
+      0 16px 40px hsl(0 0% 50% / 0.2),
+      inset 0 -1px 0 hsl(0 0% 100% / 0.08);
+  }
+
+  .split-section-image::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 45%;
+    background: linear-gradient(to top, hsl(var(--primary) / 0.45), transparent);
+    pointer-events: none;
+  }
+
+  .hero-image-overlay {
+    background:
+      linear-gradient(
+        to right,
+        hsl(0 0% 0% / 0.92) 0%,
+        hsl(0 0% 0% / 0.85) 18%,
+        hsl(0 0% 0% / 0.7) 38%,
+        hsl(0 0% 0% / 0.45) 58%,
+        hsl(0 0% 0% / 0.2) 78%,
+        hsl(0 0% 0% / 0.05) 92%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to top,
+        hsl(0 0% 0% / 0.35) 0%,
+        transparent 40%
+      );
+  }
+
+  .page-hero__image {
+    @apply absolute inset-0 h-full w-full scale-105 object-cover;
+  }
+
+  .page-hero__overlay {
+    @apply absolute inset-0 bg-secondary/70;
+  }
+
+  .legal-content {
+    @apply space-y-8 text-muted-foreground leading-relaxed;
+  }
+
+  .legal-content section {
+    @apply space-y-3;
+  }
+
+  .legal-content h2 {
+    @apply text-xl font-bold text-foreground pt-2;
+  }
+
+  .legal-content p {
+    @apply text-base;
+  }
+
+  .legal-content ul {
+    @apply list-disc pl-6 space-y-2;
+  }
+
+  .legal-content a {
+    @apply text-primary hover:underline;
   }
 }
 
@@ -160,15 +225,15 @@ html {
 .hero-carousel-track {
   display: flex;
   width: max-content;
-  gap: 1rem;
+  gap: 0;
   animation: hero-carousel-scroll 30s linear infinite;
 }
 
 .hero-carousel-item {
-  width: 280px;
-  height: 170px;
+  width: 32vw;
+  min-width: 320px;
+  height: 280px;
   flex-shrink: 0;
   overflow: hidden;
-  border-radius: 0.75rem;
 }
 
