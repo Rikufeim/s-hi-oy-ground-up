@@ -55,8 +55,17 @@ export function SplitFeatureSection({
             </Button>
           </div>
 
-          <div className={cn("split-section-image relative overflow-hidden rounded-2xl", reverse && "lg:order-1")}>
-            <img src={image} alt={imageAlt} className="aspect-[4/3] w-full object-cover lg:aspect-auto lg:min-h-[420px]" />
+          <div className={cn("split-section-image relative", reverse && "lg:order-1")}>
+            <img
+              src={image}
+              alt={imageAlt}
+              className="aspect-[4/3] w-full object-cover lg:aspect-auto lg:min-h-[480px]"
+              style={{
+                clipPath: reverse
+                  ? "polygon(0 0, 100% 0, 100% 100%, 8% 100%)"
+                  : "polygon(0 0, 92% 0, 100% 100%, 0 100%)",
+              }}
+            />
           </div>
         </div>
       </div>
