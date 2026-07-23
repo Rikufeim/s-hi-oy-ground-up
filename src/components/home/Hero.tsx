@@ -28,18 +28,17 @@ export function Hero() {
             töistä ja sähköverkkojen maakaapeloinneista.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <Button asChild size="lg" className="btn-primary text-lg">
               <Link to="/yhteystiedot">
                 Ota yhteyttä
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-secondary text-lg">
-              <Link to="/palvelut">
-                Katso palvelut
-              </Link>
-            </Button>
+            <Link to="/palvelut" className="text-white hover:text-primary transition-colors inline-flex items-center text-lg font-medium group">
+              Katso palvelut
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </div>
