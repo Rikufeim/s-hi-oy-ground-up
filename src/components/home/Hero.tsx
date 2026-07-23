@@ -35,6 +35,11 @@ export function Hero() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-secondary text-lg">
+              <Link to="/palvelut">
+                Katso palvelut
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
