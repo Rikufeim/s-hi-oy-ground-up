@@ -60,10 +60,6 @@ export function SplitFeatureSection({
               src={image}
               alt={imageAlt}
               className="aspect-[4/3] w-full object-cover lg:aspect-auto lg:min-h-[480px]"
-              style={{
-                maskImage: `linear-gradient(to ${reverse ? "left" : "right"}, transparent 0%, black 25%, black 100%)`,
-                WebkitMaskImage: `linear-gradient(to ${reverse ? "left" : "right"}, transparent 0%, black 25%, black 100%)`,
-              }}
             />
           </div>
         </div>
