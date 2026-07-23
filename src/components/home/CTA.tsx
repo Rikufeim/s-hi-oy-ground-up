@@ -4,13 +4,13 @@ import { ArrowRight, Phone, Mail } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="section-padding bg-primary">
+    <section className="section-padding bg-secondary">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Tarvitsetko maanrakennuspalveluita?
           </h2>
-          <p className="text-primary-foreground/90 text-lg mb-8">
+          <p className="text-white/90 text-lg mb-8">
             Ota yhteyttä ja pyydä ilmainen tarjous projektiisi. Vastaamme
             yhteydenottoihin nopeasti ja kartoitamme tarpeesi ammattitaidolla.
           </p>
@@ -19,7 +19,7 @@ export function CTA() {
             <Button
               asChild
               size="lg"
-              className="bg-white text-primary hover:bg-white/90 font-semibold text-lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg"
             >
               <Link to="/yhteystiedot" className="flex items-center">
                 <span>Pyydä tarjous</span>
@@ -30,7 +30,7 @@ export function CTA() {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-primary text-lg bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-secondary text-lg bg-transparent"
             >
               <a href="tel:+358401234567" className="flex items-center">
                 <Phone className="mr-2 w-5 h-5" />
@@ -39,7 +39,7 @@ export function CTA() {
             </Button>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 text-primary-foreground/80">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 text-white/80">
             <a
               href="tel:+358401234567"
               className="flex items-center space-x-2 hover:text-white transition-colors"
