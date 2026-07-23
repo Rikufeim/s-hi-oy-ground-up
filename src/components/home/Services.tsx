@@ -1,24 +1,9 @@
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
-import {
-  Home,
-  Truck,
-  Construction,
-  TreePine,
-  Route,
-  Waves,
-  Zap,
-  Users,
-  ArrowRight,
-  Check,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { SplitFeatureSection } from "@/components/home/SplitFeatureSection";
 import { ContactPromoSection } from "@/components/home/ContactPromoSection";
-import { PageHero } from "@/components/layout/PageHero";
 import homeKuljetus from "@/assets/home-kuljetus.png";
 import homeKaivinkone from "@/assets/home-kaivinkone.png";
-import homeKivipiha from "@/assets/home-kivipiha.png";
+import homeKivipiha from "@/assets/home-knowledge/kivipiha.png";
 import talonpohjaJcb from "@/assets/referenssit/talonpohja-jcb.png";
 import metsamuokkaus from "@/assets/referenssit/metsamuokkaus.png";
 import maakaapelointi from "@/assets/referenssit/maakaapelointi.png";
