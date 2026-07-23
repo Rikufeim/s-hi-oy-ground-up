@@ -1,14 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/layout/PageHero";
-import { Check } from "lucide-react";
 import talonpohjaJcb from "@/assets/referenssit/talonpohja-jcb.png";
-
-const values = [
-  { title: "Luotettavuus", description: "Pidämme kiinni sovituista aikatauluista ja lupauksista." },
-  { title: "Ammattitaito", description: "Vuosien kokemus ja jatkuva osaamisen kehittäminen." },
-  { title: "Asiakaslähtöisyys", description: "Kuuntelemme asiakkaan tarpeita ja räätälöimme ratkaisut." },
-  { title: "Laatu", description: "Emme tingi laadusta - teemme työt kerralla kunnolla." },
-];
 
 const team = [
   { name: "Kimmo Toppila", role: "Toimitusjohtaja" },
