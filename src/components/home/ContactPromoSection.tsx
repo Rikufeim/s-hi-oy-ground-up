@@ -8,19 +8,18 @@ export function ContactPromoSection() {
     <section className="bg-muted section-padding">
       <div className="container-custom">
         <div className="overflow-hidden rounded-2xl border border-border/60 bg-secondary shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-[45%_55%]">
-            <div className="flex flex-col justify-center gap-6 p-10 md:p-14 lg:p-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[55%_45%]">
+            <div className="flex flex-col justify-center gap-6 p-10 md:p-14 lg:p-20">
               <span className="inline-flex w-fit rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80">
                 Pyydä tarjous
               </span>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
                 Tarvitsetko maanrakennuspalveluita?
               </h2>
 
-              <p className="text-lg text-white/80 leading-relaxed">
-                Ota yhteyttä ja pyydä tarjous projektiisi. Vastaamme nopeasti ja kartoitamme
-                tarpeesi ammattitaidolla — olipa kyseessä pieni piha tai laajempi urakka.
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed">
+                Ota yhteyttä ja pyydä tarjous projektiisi.
               </p>
 
               <Button
