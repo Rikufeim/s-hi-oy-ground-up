@@ -52,27 +52,6 @@ const Yritys = () => {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="section-padding bg-muted">
-        <div className="container-custom">
-          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Arvomme</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div 
-                key={value.title} 
-                className="bg-card p-6 rounded-xl animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                  <Check className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-bold text-foreground text-lg mb-2">{value.title}</h3>
-                <p className="text-muted-foreground text-sm">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Team */}
       <section className="section-padding">
