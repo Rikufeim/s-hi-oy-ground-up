@@ -174,7 +174,7 @@ export function Services() {
 
       <ContactPromoSection />
 
-      <section className="bg-muted">
+      <section className="bg-secondary text-secondary-foreground">
         <PageHero
           image={homeKivipiha}
           imageAlt="Piharakentaminen ja maanrakennus"
@@ -186,24 +186,24 @@ export function Services() {
 
         <div className="container-custom section-padding">
           <div className="space-y-32">
-            {services.slice(0, 4).map((service, index) => {
+            {services.slice(0, 2).map((service, index) => {
               const isEven = index % 2 === 0;
 
               return (
                 <div
                   key={service.title}
-                  className={`${service.image ? "grid grid-cols-1 lg:grid-cols-2" : "max-w-3xl"} gap-12 items-center min-h-screen py-16 ${
+                  className={`${service.image ? "grid grid-cols-1 lg:grid-cols-2" : "max-w-3xl"} gap-16 items-center py-16 ${
                     !isEven && service.image ? "lg:flex-row-reverse" : ""
                   }`}
                 >
                   <div className={service.image && !isEven ? "lg:order-2" : ""}>
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{service.title}</h3>
-                    <p className="text-muted-foreground text-lg mb-6 leading-relaxed">{service.description}</p>
+                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">{service.title}</h3>
+                    <p className="text-white/70 text-lg mb-6 leading-relaxed">{service.description}</p>
                     <ul className="space-y-3 mb-8">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start space-x-3">
                           <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                          <span className="text-foreground">{feature}</span>
+                          <span className="text-white/90">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -217,8 +217,8 @@ export function Services() {
 
                   {service.image && (
                     <div className={isEven ? "" : "lg:order-1"}>
-                      <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
-                        <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                      <div className="service-feather-image">
+                        <img src={service.image} alt={service.title} />
                       </div>
                     </div>
                   )}
