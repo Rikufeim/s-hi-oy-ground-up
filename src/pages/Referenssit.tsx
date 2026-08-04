@@ -32,9 +32,8 @@ const Referenssit = () => {
         blur="sm"
         image={pihakivetys}
         imageAlt="Referenssikuvia"
-        eyebrow="Referenssit"
-        title="Toteutetut projektit"
-        description="Valittuja kuvia toteutetuista kohteista."
+        eyebrow="Galleria"
+        title="Kuvia työmaalta"
       />
 
       <section className="section-padding">
