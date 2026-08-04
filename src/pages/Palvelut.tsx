@@ -112,7 +112,7 @@ const Palvelut = () => {
         imageAlt="Kaivinkoneurakointi"
         eyebrow="Palvelumme"
         title="Maanrakennustyöt ja sähköverkkojen maakaapeloinnit Pohjois-Pohjanmaalla"
-        description="Maanrakennustyöt vaativat erikoiskalustoa ja -osaamista, joten ne on syytä antaa ammattilaisten toteutettaviksi. Meillä on pitkä kokemus erilaisista maanrakennusalan töistä ja sähköverkkojen maakaapeloinneista."
+        description="Meillä on pitkä kokemus erilaisista maanrakennusalan töistä ja sähköverkkojen maakaapeloinneista."
       />
 
       <section className="py-12 bg-muted">
