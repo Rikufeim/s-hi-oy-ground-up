@@ -23,9 +23,8 @@ export function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-xl">
-            Maanrakennustyöt vaativat erikoiskalustoa ja -osaamista, joten ne on syytä antaa
-            ammattilaisten toteutettaviksi. Meillä on pitkä kokemus erilaisista maanrakennusalan
-            töistä ja sähköverkkojen maakaapeloinneista.
+            Meillä on pitkä kokemus erilaisista maanrakennusalan töistä ja sähköverkkojen
+            maakaapeloinneista.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">

@@ -1,47 +1,61 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-excavator-new.png";
+import { ArrowRight, Phone, Mail } from "lucide-react";
+import { COMPANY } from "@/lib/company";
 
 export function ContactPromoSection() {
   return (
-    <section className="bg-muted section-padding">
+    <section className="section-padding bg-secondary">
       <div className="container-custom">
-        <div className="overflow-hidden rounded-2xl border border-border/60 bg-secondary shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-[55%_45%]">
-            <div className="flex flex-col justify-center gap-6 p-10 md:p-14 lg:p-20">
-              <span className="inline-flex w-fit rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80">
-                Pyydä tarjous
-              </span>
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Tarvitsetko maanrakennuspalveluita?
+          </h2>
+          <p className="text-white/90 text-lg mb-8">
+            Ota yhteyttä ja pyydä ilmainen tarjous projektiisi. Vastaamme
+            yhteydenottoihin nopeasti ja kartoitamme tarpeesi ammattitaidolla.
+          </p>
 
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                Tarvitsetko maanrakennuspalveluita?
-              </h2>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg"
+            >
+              <Link to="/yhteystiedot" className="flex items-center">
+                <span>Pyydä tarjous</span>
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-secondary text-lg bg-transparent"
+            >
+              <a href={`tel:${COMPANY.phoneTel}`} className="flex items-center">
+                <Phone className="mr-2 w-5 h-5" />
+                <span>{COMPANY.phone}</span>
+              </a>
+            </Button>
+          </div>
 
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-                Ota yhteyttä ja pyydä tarjous projektiisi.
-              </p>
-
-              <Button
-                asChild
-                size="lg"
-                className="w-fit rounded-full bg-white px-8 text-foreground hover:bg-white/90 font-semibold"
-              >
-                <Link to="/yhteystiedot" className="flex items-center">
-                  Pyydä tarjous
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-
-            <div className="relative min-h-[280px] lg:min-h-full">
-              <img
-                src={heroImage}
-                alt="Sähi Oy maanrakennustyöt"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/25 via-transparent to-transparent" />
-            </div>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 text-white/80">
+            <a
+              href={`tel:${COMPANY.phoneTel}`}
+              className="flex items-center space-x-2 hover:text-white transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+              <span>{COMPANY.phone}</span>
+            </a>
+            <span className="hidden sm:block">•</span>
+            <a
+              href={`mailto:${COMPANY.email}`}
+              className="flex items-center space-x-2 hover:text-white transition-colors"
+            >
+              <Mail className="w-5 h-5" />
+              <span>{COMPANY.email}</span>
+            </a>
           </div>
         </div>
       </div>

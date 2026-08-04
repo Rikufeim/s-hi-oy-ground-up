@@ -1,19 +1,10 @@
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/layout/PageHero";
+import { ContactPromoSection } from "@/components/home/ContactPromoSection";
 import { Link } from "react-router-dom";
-import {
-  Home,
-  Truck,
-  Construction,
-  TreePine,
-  Route,
-  Waves,
-  Zap,
-  Users,
-  ArrowRight,
-  Check,
-} from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import homeKuljetus from "@/assets/home-kuljetus.png";
 import homeKaivinkone from "@/assets/home-kaivinkone.png";
 import homeKivipiha from "@/assets/home-kivipiha.png";
@@ -25,81 +16,117 @@ import kantojyrsinta from "@/assets/referenssit/kantojyrsinta.png";
 
 const services = [
   {
-    icon: Home,
     title: "Talonpohjat",
-    description: "Ammattitaidolla toteutetut talonpohjat ja perustatukset. Varmistamme tukevat rakenteet kaikille rakennustyypeille.",
+    description:
+      "Tukeva pohja kantaa koko rakennuksen elinkaaren ajan. Kaivamme, tiivistämme ja tasaamme maapohjan 3D-mittauksen avulla, niin että perustustyö voi alkaa ilman yllätyksiä.",
     features: [
-      "Perustusten kaivuu ja valmistelu",
-      "Maanpohjan tiivistys ja tasaus",
-      "Vesieristys ja tiivistys",
-      "Lopputarkastus ja hyväksyntä",
+      "Perustusten kaivuu ja maapohjan valmistelu",
+      "Tiivistys ja tasaus 3D-ohjauksella",
+      "Vesieristys ja salaojitus tarvittaessa",
+      "Yhteinen lopputarkastus ennen seuraavaa työvaihetta",
     ],
-    href: "/palvelut/talonpohjat",
     image: talonpohjaJcb,
   },
   {
-    icon: Truck,
     title: "Maansiirtotyöt",
-    description: "Tehokkaat maansiirtotyöt ja maa-ainesten kuljetukset kaikenkokoisiin projekteihin.",
-    features: ["Maanpohjan tasaus", "Maa-ainesten kuljetus", "Täyttö- ja poistotyöt", "Lopputasoitus"],
-    href: "/palvelut/maansiirtotyot",
+    description:
+      "Hoidamme kuljetukset ja täyttötyöt omalla kalustollamme, pienistä pihaprojekteista suurempiin urakoihin.",
+    features: [
+      "Maanpohjan tasaus ja täyttötyöt",
+      "Maa-ainesten kuljetus omalla kalustolla",
+      "Poistotyöt ja loppusiivous",
+      "Sovitussa aikataulussa pysyminen",
+    ],
     image: homeKuljetus,
   },
   {
-    icon: Construction,
     title: "Kaivinkoneurakointi",
     description: "Modernit kaivinkoneet ja ammattitaitoiset kuljettajat vaativimpiinkin kohteisiin.",
     features: ["Kaivuu- ja täyttötyöt", "Rakennustyömaiden valmistelu", "Jäteveden kaivot", "Pohjaveden hallinta"],
-    href: "/palvelut/kaivinkoneurakointi",
     image: homeKaivinkone,
   },
   {
-    icon: TreePine,
     title: "Metsämuokkaukset",
-    description: "Metsämaan muokkaus istutuksia ja uudistamista varten. Laikkumätästys ja äestys.",
-    features: ["Metsämaan muokkaus", "Laikkumätästys", "Äestys ja tasaus", "Istutusvalmistelut"],
-    href: "/palvelut/metsamuokkaukset",
+    description:
+      "Onnistunut istutus alkaa hyvin muokatusta maasta. Teemme laikkumätästyksen ja äestyksen niin, että taimet pääsevät kasvamaan hyvästä alusta.",
+    features: [
+      "Laikkumätästys istutuksia varten",
+      "Äestys ja maanpinnan tasaus",
+      "Metsämaan muokkaus uudistusaloille",
+      "Työ tehdään maaston ja kasvupaikan mukaan",
+    ],
     image: metsamuokkaus,
   },
   {
-    icon: Route,
     title: "Teiden pohjatyöt",
-    description: "Tiealueiden pohjatyöt suunnitelmien mukaan laadukkaasti toteutettuna.",
-    features: ["Tienpohjatyöt", "Kulkuväylien tasaus"],
-    href: "/palvelut/teiden-pohjatyot",
+    description:
+      "Kestävä tie alkaa kestävästä pohjasta. Rakennamme tienpohjat suunnitelman mukaan, niin ettei routa tai vesi pääse yllättämään myöhemmin.",
+    features: [
+      "Tienpohjatyöt suunnitelmien mukaan",
+      "Kulkuväylien ja liittymien tasaus",
+      "Kuivatus huomioidaan jo pohjatyössä",
+    ],
     image: homeKivipiha,
   },
   {
-    icon: Home,
     title: "Pihojen pohjatyöt",
-    description: "Piha-alueiden pohjatyöt huolellisesti valmiiksi jatkorakentamista varten.",
-    features: ["Piha-alueiden valmistelu", "Maanpohjan tasaus", "Pysäköintialueiden pohjatyöt"],
-    href: "/palvelut/pihojen-pohjatyot",
+    description:
+      "Piha on rakennuksen käyntikortti. Teemme pohjatyöt niin, että päällyste, pysäköintialue tai kivetys pysyy siistinä vuodesta toiseen.",
+    features: [
+      "Piha-alueiden pohjan valmistelu",
+      "Maanpohjan tasaus ja tiivistys",
+      "Pysäköintialueiden pohjatyöt",
+      "Valmis alusta seuraavalle urakoitsijalle",
+    ],
     image: pihatieSora,
   },
   {
-    icon: Waves,
     title: "Ojitukset",
-    description: "Peltojen ja metsien ojitus sekä salaojitustyöt. Parannamme maan kuivatusta.",
-    features: ["Peltojen ojitus", "Salaojitustyöt", "Kuivatusjärjestelmät", "Ojien kunnossapito"],
-    href: "/palvelut/ojitukset",
+    description:
+      "Vettynyt pelto tai metsä ei tuota. Kaivamme ja kunnostamme ojat sekä salaojitukset niin, että kuivatus toimii taas kunnolla.",
+    features: [
+      "Peltojen ja metsien ojitus",
+      "Salaojitustyöt",
+      "Vanhojen ojien kunnostus ja perkaus",
+      "Toimiva kuivatus koko kasvukaudeksi",
+    ],
     image: metsamuokkaus,
   },
   {
-    icon: Zap,
     title: "Sähköverkkojen maakaapeloinnit",
-    description: "Sähköverkkojen maakaapeloinnit. Turvallinen ja huomaamaton sähkönjakelu.",
-    features: ["Sähköverkon maakaapelointi", "Kaapelien asennus", "Turvallinen toteutus", "Lopputarkastus"],
-    href: "/palvelut/maakaapelointi",
+    description:
+      "Kaapelityömaa on oma lajinsa — tarkkuutta, säännöksiä ja tiivistä yhteistyötä verkkoyhtiön kanssa. Meillä on siihen vuosien kokemus.",
+    features: [
+      "Kaapeliojien kaivuu ja putkitukset",
+      "Kaapelien asennus ja suojaus",
+      "Yhteistyö sähköverkkoyhtiöiden kanssa",
+      "Työ tehdään turvamääräysten mukaisesti",
+    ],
     image: maakaapelointi,
   },
   {
-    icon: Users,
     title: "Kuljettajapalvelut",
-    description: "Kokeneet kuljettajat vuokrattavissa kalustoosi. Ammattitaito käytössäsi.",
-    features: ["Kokeneet kuljettajat", "Moderni kalusto", "Joustava palvelu", "Ammattitaitoinen toteutus"],
-    href: "/palvelut/kuljettajapalvelut",
+    description:
+      "Tarvitsetko osaavan kuljettajan omaan kalustoosi ruuhka-ajaksi tai pidemmäksi projektiksi? Kuljettajamme tuntevat koneet ja työmaakäytännöt.",
+    features: [
+      "Kokenut kuljettaja omaan tai meidän kalustoon",
+      "Joustavasti lyhyt- tai pitkäaikaiseen tarpeeseen",
+      "Perehtynyt työmaan turvallisuuskäytäntöihin",
+    ],
     image: kantojyrsinta,
+  },
+];
+
+const highlights = [
+  {
+    title: "Maanrakennustyöt",
+    description:
+      "Meillä on kattava valikoima erilaisia työkoneita ja osaavat tekijät. Toteutamme sekä pienet että suuret maanrakennustyöt tehokkaasti ja huolellisesti.",
+  },
+  {
+    title: "Sähköverkkojen maakaapelointi",
+    description:
+      "Teemme maanrakennustyöt sähköverkkojen maakaapelointia varten. Palvelumme kattaa kaapeliojien kaivuutyöt, putkitukset ja kaapelien suojaamisen.",
   },
 ];
 
@@ -115,84 +142,96 @@ const Palvelut = () => {
         description="Meillä on pitkä kokemus erilaisista maanrakennusalan töistä ja sähköverkkojen maakaapeloinneista."
       />
 
-      <section className="py-12 bg-muted">
-        <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-card rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Maanrakennustyöt</h2>
-            <p className="text-muted-foreground mb-6">
-              Meillä on kattava valikoima erilaisia työkoneita ja osaavat tekijät. Toteutamme sekä
-              pienet että suuret maanrakennustyöt tehokkaasti ja huolellisesti.
-            </p>
-            <Button asChild className="btn-primary">
-              <Link to="/yhteystiedot">Ota yhteyttä</Link>
-            </Button>
-          </div>
-          <div className="bg-card rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Sähköverkkojen maakaapelointi</h2>
-            <p className="text-muted-foreground mb-6">
-              Teemme maanrakennustyöt sähköverkkojen maakaapelointia varten. Palvelumme kattaa
-              kaapeliojien kaivuutyöt, putkitukset ja kaapelien suojaamisen.
-            </p>
-            <Button asChild className="btn-primary">
-              <Link to="/yhteystiedot">Ota yhteyttä</Link>
-            </Button>
+      <section className="section-padding bg-background">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            {highlights.map((item) => (
+              <div key={item.title} className="space-y-5">
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">
+                    {item.title}
+                  </h2>
+                  <div className="mt-4 h-1 w-16 bg-primary rounded-full" />
+                </div>
+                <p className="text-muted-foreground text-lg leading-relaxed">{item.description}</p>
+                <Link
+                  to="/yhteystiedot"
+                  className="inline-flex items-center text-foreground font-medium hover:text-primary transition-colors group"
+                >
+                  Ota yhteyttä
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Services List */}
-      <section className="section-padding">
+      <section className="pb-8 md:pb-12">
         <div className="container-custom">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl border-t border-border pt-12 md:pt-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Palveluitamme</h2>
             <p className="text-muted-foreground text-lg">
               Yksityisille tarjoamamme palvelut ovat kotitalousvähennyskelpoisia. Lisätietoa löydät
               Verohallinnon sivuilta.
             </p>
           </div>
-          <div className="space-y-20">
-            {services.map((service, index) => {
-              const isEven = index % 2 === 0;
-
-              return (
-                <div
-                  key={service.title}
-                  className={`${service.image ? "grid grid-cols-1 lg:grid-cols-2" : "max-w-3xl"} gap-12 items-center py-12 ${
-                    !isEven && service.image ? "lg:flex-row-reverse" : ""
-                  }`}
-                >
-                  <div className={service.image && !isEven ? "lg:order-2" : ""}>
-                    <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{service.title}</h2>
-                    <p className="text-muted-foreground text-lg mb-6 leading-relaxed">{service.description}</p>
-                    <ul className="space-y-3 mb-8">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start space-x-3">
-                          <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                          <span className="text-foreground">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button asChild className="btn-primary">
-                      <Link to="/yhteystiedot" className="flex items-center">
-                        <span>Ota yhteyttä</span>
-                        <ArrowRight className="ml-2 w-5 h-5" />
-                      </Link>
-                    </Button>
-                  </div>
-
-                  {service.image && (
-                    <div className={isEven ? "" : "lg:order-1"}>
-                      <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
-                        <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
         </div>
       </section>
+
+      {services.map((service, index) => {
+        const isEven = index % 2 === 0;
+
+        return (
+          <section
+            key={service.title}
+            className={cn(isEven ? "bg-background" : "bg-muted")}
+          >
+            <div className="container-custom">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center py-16 md:py-24">
+                <div className={cn("space-y-6", !isEven && "lg:order-2")}>
+                  <div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">
+                      {service.title}
+                    </h2>
+                    <div className="mt-4 h-1 w-16 bg-primary rounded-full" />
+                  </div>
+
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  <ul className="space-y-3">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Button asChild className="btn-primary">
+                    <Link to="/yhteystiedot" className="flex items-center">
+                      Ota yhteyttä
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Link>
+                  </Button>
+                </div>
+
+                <div className={cn(!isEven && "lg:order-1")}>
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })}
+
+      <ContactPromoSection />
     </Layout>
   );
 };
