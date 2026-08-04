@@ -150,14 +150,14 @@ const Palvelut = () => {
               Verohallinnon sivuilta.
             </p>
           </div>
-          <div className="space-y-32">
+          <div className="space-y-20">
             {services.map((service, index) => {
               const isEven = index % 2 === 0;
 
               return (
                 <div
                   key={service.title}
-                  className={`${service.image ? "grid grid-cols-1 lg:grid-cols-2" : "max-w-3xl"} gap-12 items-center min-h-screen py-16 ${
+                  className={`${service.image ? "grid grid-cols-1 lg:grid-cols-2" : "max-w-3xl"} gap-12 items-center py-12 ${
                     !isEven && service.image ? "lg:flex-row-reverse" : ""
                   }`}
                 >
