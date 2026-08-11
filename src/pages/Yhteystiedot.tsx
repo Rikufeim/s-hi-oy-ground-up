@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { PageHero } from "@/components/layout/PageHero";
-import homeKuljetus from "@/assets/home-kuljetus.png";
+import homeKaivinkone from "@/assets/home-kaivinkone.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -42,8 +42,8 @@ const Yhteystiedot = () => {
     <Layout>
       <PageHero
         blur="sm"
-        image={homeKuljetus}
-        imageAlt="Maanrakennuskuljetus"
+        image={homeKaivinkone}
+        imageAlt="Kaivinkoneurakointi"
         eyebrow="Yhteystiedot"
         title="Ota yhteyttä"
         description="Pyydä tarjous tai kysy lisätietoja palveluistamme. Vastaamme yhteydenottoihin nopeasti."
