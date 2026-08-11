@@ -29,7 +29,7 @@ const maanrakennusFeatures = [
 ];
 
 const maakaapelointiFeatures = [
-  "Kaapeliojien kaivuutyöt ja putkitukset",
+  "Kaapeliojien kaivuutyöt ja suojaus",
   "Kaapelien suojaus ja asennusvalmistelu",
   "Turvallinen ja säännösten mukainen toteutus",
   "Yhteistyö sähköverkkoyhtiöiden kanssa",
@@ -68,7 +68,7 @@ export function Services() {
 
       <SplitFeatureSection
         title="Sähköverkkojen maakaapelointi"
-        description="Teemme maanrakennustyöt sähköverkkojen maakaapelointia varten. Palvelumme kattaa kaapeliojien kaivuutyöt, putkitukset ja kaapelien suojaamisen."
+        description="Teemme maanrakennustyöt sähköverkkojen maakaapelointia varten. Palvelumme kattaa kaapeliojien kaivuutyöt ja kaapelien suojaamisen."
         features={maakaapelointiFeatures}
         ctaLabel="Ota yhteyttä"
         ctaHref="/yhteystiedot"
