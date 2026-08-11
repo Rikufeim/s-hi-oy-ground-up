@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import homeKuljetus from "@/assets/home-kuljetus.png";
 import homeKaivinkone from "@/assets/home-kaivinkone.png";
 import homeKivipiha from "@/assets/home-kivipiha.png";
 import talonpohjaJcb from "@/assets/referenssit/talonpohja-jcb.png";
@@ -37,7 +36,7 @@ const services = [
       "Poistotyöt ja loppusiivous",
       "Sovitussa aikataulussa pysyminen",
     ],
-    image: homeKuljetus,
+    image: pihatieSora,
   },
   {
     title: "Kaivinkoneurakointi",

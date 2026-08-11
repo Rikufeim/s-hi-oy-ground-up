@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { SplitFeatureSection } from "@/components/home/SplitFeatureSection";
 import { ContactPromoSection } from "@/components/home/ContactPromoSection";
-import homeKuljetus from "@/assets/home-kuljetus.png";
 import homeKaivinkone from "@/assets/home-kaivinkone.png";
 import homeKivipiha from "@/assets/home-kivipiha.png";
 import talonpohjaJcb from "@/assets/referenssit/talonpohja-jcb.png";
@@ -12,7 +11,6 @@ import kantojyrsinta from "@/assets/referenssit/kantojyrsinta.png";
 
 const carouselImages = [
   talonpohjaJcb,
-  homeKuljetus,
   homeKaivinkone,
   metsamuokkaus,
   homeKivipiha,
