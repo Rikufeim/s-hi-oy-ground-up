@@ -18,10 +18,10 @@ const services = [
   {
     title: "Talonpohjat",
     description:
-      "Tukeva pohja kantaa koko rakennuksen elinkaaren ajan. Kaivamme, tiivistämme ja tasaamme maapohjan 3D-mittauksen avulla, niin että perustustyö voi alkaa ilman yllätyksiä.",
+      "Tukeva pohja kantaa koko rakennuksen elinkaaren ajan. Kaivamme, tiivistämme ja tasaamme maapohjan niin, että perustustyö voi alkaa ilman yllätyksiä.",
     features: [
       "Perustusten kaivuu ja maapohjan valmistelu",
-      "Tiivistys ja tasaus 3D-ohjauksella",
+      "Tiivistys ja tasaus",
       "Vesieristys ja salaojitus tarvittaessa",
       "Yhteinen lopputarkastus ennen seuraavaa työvaihetta",
     ],
@@ -42,16 +42,14 @@ const services = [
   {
     title: "Kaivinkoneurakointi",
     description: "Modernit kaivinkoneet ja ammattitaitoiset kuljettajat vaativimpiinkin kohteisiin.",
-    features: ["Kaivuu- ja täyttötyöt", "Rakennustyömaiden valmistelu", "Jäteveden kaivot", "Pohjaveden hallinta"],
+    features: ["Kaivuu- ja täyttötyöt", "Rakennustyömaiden valmistelu"],
     image: homeKaivinkone,
   },
   {
     title: "Metsämuokkaukset",
     description:
-      "Onnistunut istutus alkaa hyvin muokatusta maasta. Teemme laikkumätästyksen ja äestyksen niin, että taimet pääsevät kasvamaan hyvästä alusta.",
+      "Onnistunut istutus alkaa hyvin muokatusta maasta. Teemme metsämuokkaukset niin, että taimet pääsevät kasvamaan hyvästä alusta.",
     features: [
-      "Laikkumätästys istutuksia varten",
-      "Äestys ja maanpinnan tasaus",
       "Metsämaan muokkaus uudistusaloille",
       "Työ tehdään maaston ja kasvupaikan mukaan",
     ],
@@ -97,7 +95,7 @@ const services = [
     description:
       "Kaapelityömaa on oma lajinsa — tarkkuutta, säännöksiä ja tiivistä yhteistyötä verkkoyhtiön kanssa. Meillä on siihen vuosien kokemus.",
     features: [
-      "Kaapeliojien kaivuu ja putkitukset",
+      "Kaapeliojien kaivuu ja suojaus",
       "Kaapelien asennus ja suojaus",
       "Yhteistyö sähköverkkoyhtiöiden kanssa",
       "Työ tehdään turvamääräysten mukaisesti",
@@ -126,7 +124,7 @@ const highlights = [
   {
     title: "Sähköverkkojen maakaapelointi",
     description:
-      "Teemme maanrakennustyöt sähköverkkojen maakaapelointia varten. Palvelumme kattaa kaapeliojien kaivuutyöt, putkitukset ja kaapelien suojaamisen.",
+      "Teemme maanrakennustyöt sähköverkkojen maakaapelointia varten. Palvelumme kattaa kaapeliojien kaivuutyöt ja kaapelien suojaamisen.",
   },
 ];
 
